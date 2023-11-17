@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build-Openwrt-MT3000
+name: Build-Openwrt-MT30002
 
 on:
   repository_dispatch:
