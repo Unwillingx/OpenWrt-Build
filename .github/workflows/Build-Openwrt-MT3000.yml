@@ -12,7 +12,6 @@ env:
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: ROOTFS
   OPENWRT_RELEASE: true
-  OPENWRT_TAG: MTK7981b
   TZ: Asia/Shanghai
 
 jobs:
