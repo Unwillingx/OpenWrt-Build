@@ -1,4 +1,4 @@
-name: ARMv8 Mini OpenWrt
+name: Build-Openwrt-N1
 
 on:
   workflow_dispatch:
