@@ -8,7 +8,7 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: Configs/n1.config
   DIY_P1_SH: Scripts/diy-part1.sh
-  DIY_P2_SH: Scripts/diy-part2.sh
+  DIY_P2_SH: Scripts/diy-n1.sh
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: false
   FIRMWARE_TAG: N1
