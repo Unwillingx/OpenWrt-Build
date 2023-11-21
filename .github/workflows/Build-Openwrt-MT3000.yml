@@ -10,7 +10,7 @@ env:
   DIY_P1_SH: Scripts/diy-part1.sh
   DIY_P2_SH: Scripts/diy-part2.sh
   UPLOAD_BIN_DIR: false
-  FIRMWARE_RELEASE: false
+  FIRMWARE_RELEASE: true
   FIRMWARE_TAG: GL-MT3000
   OPENWRT_RELEASE: true
   TZ: Asia/Shanghai
