@@ -220,7 +220,7 @@ jobs:
         name: R${{ env.DATE }} for ${{ env.OPENWRT_TAG }}
         allowUpdates: true
         removeArtifacts: true
-        tag: ${{ env.OPENWRT_TAG }}
+        tag: ${{ env.DATE }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
