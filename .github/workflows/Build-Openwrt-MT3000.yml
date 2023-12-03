@@ -10,9 +10,9 @@ env:
   DIY_P1_SH: Scripts/diy-part1.sh
   DIY_P2_SH: Scripts/diy-part2.sh
   UPLOAD_BIN_DIR: false
-  FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: GL-MT3000-ImmortalWrt
+  UPLOAD_ARTIFACT: false
   OPENWRT_RELEASE: true
+  FIRMWARE_TAG: GL-MT3000-ImmortalWrt
   TZ: Asia/Shanghai
 
 jobs:
@@ -142,7 +142,7 @@ jobs:
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
     - name: Upload Firmware To Artifact
-      if: steps.generate.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
+      if: steps.generate.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true'
       uses: actions/upload-artifact@main
       with:
         name: ${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
