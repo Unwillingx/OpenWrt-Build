@@ -72,7 +72,7 @@ jobs:
         removeArtifacts: true
         tag: ${{ env.RELEASE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*/*
+        artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*.img.gz
         body: |
           **This is OpenWrt Firmware for N1**
           当前使用版本:【编译前的最后一次➦[主源码](https://github.com/immortalwrt/immortalwrt)更新记录】
