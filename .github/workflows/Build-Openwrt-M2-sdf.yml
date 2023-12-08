@@ -1,18 +1,18 @@
-name: Build-Openwrt-CMOIT
+name: Build-Openwrt-M2-sdf
 
 on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede.git
+  REPO_URL: https://github.com/sdf8057/ipq6000.git
   REPO_BRANCH: master
-  CONFIG_FILE: Configs/cmiot.config
+  CONFIG_FILE: Configs/m2_sdf.config
   DIY_P1_SH: Scripts/diy-part1.sh
   DIY_P2_SH: Scripts/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   OPENWRT_RELEASE: true
-  FIRMWARE_TAG: CMIOT
+  FIRMWARE_TAG: M2-sdf
   TZ: Asia/Shanghai
 
 jobs:
@@ -46,10 +46,9 @@ jobs:
       run: |
         docker rmi $(docker images -q)
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
+        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.eu.org/init_build_environment.sh)'
+        git config --global user.email ${{ github.actor }}@users.noreply.github.com
+        git config --global user.name ${{ github.actor }}
         sudo timedatectl set-timezone "$TZ"
 
     - name: Clone Source Code
@@ -158,6 +157,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
-          **This is Temporary Firmware for CMIOT**
-          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
+          **This is Temporary Firmware for ZN-M2**
+          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/sdf8057/ipq6000)更新记录】
           ${{ env.VERSION_INFO }}
