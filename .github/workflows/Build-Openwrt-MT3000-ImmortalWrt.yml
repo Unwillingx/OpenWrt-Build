@@ -8,7 +8,7 @@ env:
   REPO_BRANCH: master
   CONFIG_FILE: Configs/mt3000_1.config
   DIY_P1_SH: Scripts/diy-part1.sh
-  DIY_P2_SH: Scripts/diy-part2.sh
+  DIY_P2_SH: Scripts/diy-mt3000.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   OPENWRT_RELEASE: true
