@@ -137,6 +137,7 @@ jobs:
         tar -zcf Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
+        echo "RELEASE_TAG=${{ env.FIRMWARE_TAG }}-$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 
     - name: Upload Firmware To Artifact
       if: steps.generate.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true'
@@ -151,7 +152,7 @@ jobs:
       with:
         name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        tag: ${{ env.RELEASE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
