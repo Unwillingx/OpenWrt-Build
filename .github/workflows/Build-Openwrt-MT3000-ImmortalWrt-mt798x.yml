@@ -98,19 +98,19 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         echo -e "$(nproc) thread compile"
-        make tools/compile -j$(nproc) || make tools/compile -j1 V=s
-        make toolchain/compile -j$(nproc) || make toolchain/compile -j1 V=s
+        make tools/compile -j1 V=s
+        make toolchain/compile -j1 V=s
         make diffconfig
-        make target/compile -j$(nproc) || make target/compile -j1 V=s IGNORE_ERRORS=1
-        make package/compile -j$(nproc) IGNORE_ERRORS=1 || make package/compile -j1 V=s IGNORE_ERRORS=1
+        make target/compile -j1 V=s
+        make package/compile -j1 V=s
         make package/index
 
     - name: Generate Firmware
       id: generate
       run: |
         cd $OPENWRT_PATH
-        make package/install -j$(nproc) || make package/install -j1 V=s
-        make target/install -j$(nproc) || make target/install -j1 V=s
+        make package/install -j1 V=s
+        make target/install -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         make checksum
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
