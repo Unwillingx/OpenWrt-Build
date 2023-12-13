@@ -5,7 +5,6 @@ on:
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x.git
-  REPO_BRANCH: openwrt-21.02
   CONFIG_FILE: Configs/mt3000_3.config
   DIY_P1_SH: Scripts/diy-part1.sh
   DIY_P2_SH: Scripts/diy-798x.sh
@@ -53,7 +52,7 @@ jobs:
       id: clone
       run: |
         df -hT $GITHUB_WORKSPACE
-        git clone $REPO_URL -b $REPO_BRANCH workdir/openwrt
+        git clone --depth=1 $REPO_URL workdir/openwrt
         cd workdir/openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
