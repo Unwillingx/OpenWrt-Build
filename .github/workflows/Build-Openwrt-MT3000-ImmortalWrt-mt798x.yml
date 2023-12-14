@@ -9,7 +9,7 @@ env:
   DIY_P1_SH: Scripts/diy-m2-part1.sh
   DIY_P2_SH: Scripts/diy-798x-part2.sh
   UPLOAD_BIN_DIR: false
-  UPLOAD_ARTIFACT: true
+  UPLOAD_ARTIFACT: false
   UPLOAD_RELEASE: true
   FIRMWARE_TAG: GL-MT3000-ImmortalWrt-mt798x
   TZ: Asia/Shanghai
@@ -110,7 +110,7 @@ jobs:
         path: ${{ env.FIRMWARE }}
 
     - name: Upload Firmware To Release
-      if: steps.generate.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
+      if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
         name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
