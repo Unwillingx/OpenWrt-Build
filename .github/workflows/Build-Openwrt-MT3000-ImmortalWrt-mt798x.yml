@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x.git
   CONFIG_FILE: Configs/mt3000_3.config
-  DIY_P1_SH: Scripts/diy-m2-part1.sh
+  DIY_P1_SH: Scripts/diy-imm-part1.sh
   DIY_P2_SH: Scripts/diy-798x-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
@@ -45,12 +45,6 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
