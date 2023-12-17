@@ -7,8 +7,8 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: Configs/mt3000_2.config
-  DIY_P1_SH: Scripts/diy-part1.sh
-  DIY_P2_SH: Scripts/diy-part2.sh
+  DIY_P1_SH: Scripts/diy-lean-part1.sh
+  DIY_P2_SH: Scripts/diy-lean-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   OPENWRT_RELEASE: true
@@ -68,9 +68,7 @@ jobs:
         cd $OPENWRT_PATH
         chmod +x $GITHUB_WORKSPACE/$DIY_P1_SH
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-
+        
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
