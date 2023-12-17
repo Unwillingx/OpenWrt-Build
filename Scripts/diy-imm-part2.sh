@@ -8,5 +8,5 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone -b master --depth=1 https://github.com/vernesong/OpenClash.git package/openclash
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 ./scripts/feeds install -a
