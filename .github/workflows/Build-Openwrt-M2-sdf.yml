@@ -67,7 +67,6 @@ jobs:
         cd $OPENWRT_PATH
         chmod +x $GITHUB_WORKSPACE/$DIY_P1_SH
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        ./scripts/feeds install -a
 
     - name: Load Custom Configuration
       run: |
