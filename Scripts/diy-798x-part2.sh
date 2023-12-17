@@ -8,4 +8,8 @@ git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/l
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# 添加luci-theme-design
 git clone https://github.com/gngpp/luci-theme-design.git -b js package/luci-theme-design
+# 添加luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
+svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
