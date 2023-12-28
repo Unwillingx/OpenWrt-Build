@@ -40,6 +40,9 @@ jobs:
         df -hT $PWD
         git clone --depth=1 $REPO_URL openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cd openwrt
+        VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
+        echo "VERSION_INFO=$VERSION_INFO" >> $GITHUB_ENV
         
     - name: Load custom feeds
       run: |
@@ -124,4 +127,5 @@ jobs:
         body: |
           **This is Temporary Firmware for N1**
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
+          ${{ env.VERSION_INFO }}
          
