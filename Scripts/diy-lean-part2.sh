@@ -6,6 +6,5 @@ sed -i "s/local navbar_proxy = 'shadowsocksr'/local navbar_proxy = 'openclash'/g
 # 添加luci-app-mosdns
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
-rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
