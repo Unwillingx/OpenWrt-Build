@@ -4,10 +4,9 @@ on:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: master
-  CONFIG_FILE: Configs/n1.config
-  DIY_P1_SH: Scripts/diy-part1.sh
-  DIY_P2_SH: Scripts/diy-n1.sh
+  CONFIG_FILE: Configs/n1_imm.config
+  DIY_P1_SH: Scripts/diy-imm-part1.sh
+  DIY_P2_SH: Scripts/diy-imm-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   UPLOAD_RELEASE: true
@@ -128,3 +127,4 @@ jobs:
           **This is Temporary Firmware for N1**
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt)更新记录】
           ${{ env.VERSION_INFO }}
+         
