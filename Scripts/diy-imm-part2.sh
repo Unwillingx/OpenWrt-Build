@@ -9,6 +9,6 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 # svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
-git clone https://github.com/vernesong/OpenClash.git -b dev package/luci-app-openclash
+git clone --depth=1 https://github.com/vernesong/OpenClash.git -b dev package/luci-app-openclash
 # 添加luci-app-amlogic
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
