@@ -6,8 +6,6 @@ rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-# svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
 # 添加luci-app-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git -b master package/luci-theme-argon
