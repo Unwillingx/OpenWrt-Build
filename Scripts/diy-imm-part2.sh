@@ -11,4 +11,4 @@ rm -rf feeds/luci/applications/luci-app-openclash
 # svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
 # 添加luci-app-amlogic
-svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
