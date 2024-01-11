@@ -13,6 +13,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git -b master 
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git -b master package/luci-app-argon-config
 # 修改python
 sudo mkdir python
+sudo chmod -R 777 python
 git clone https://github.com/openwrt/packages.git python && cd python && git checkout 246f361b06a9c99cd21c0bc06fa5141198916054
 cd ..
 sudo rm -rf feeds/packages/lang/python
