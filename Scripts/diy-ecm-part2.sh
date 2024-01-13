@@ -10,5 +10,5 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
 # 添加luci-theme-design
-git clone --depth=1 https://github.com/gngpp/luci-theme-design.git -b master package/luci-theme-design
+git clone --depth=1 https://github.com/gngpp/luci-theme-design.git -b main package/luci-theme-design
 sed -i "s/local navbar_proxy = 'shadowsocksr'/local navbar_proxy = 'openclash'/g" master package/luci-theme-design/luasrc/view/themes/design/header.htm
