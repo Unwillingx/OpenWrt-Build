@@ -12,3 +12,11 @@ git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package
 # 添加luci-theme-design
 git clone --depth=1 https://github.com/gngpp/luci-theme-design.git -b main package/luci-theme-design
 git clone --depth=1 https://github.com/gngpp/luci-app-design-config.git -b master package/luci-app-design-config
+# 添加luci-app-watchcat-plus
+sudo rm -rf feeds/packages/utils/watchcat
+sudo mkdir watchcat
+sudo chmod -R 777 watchcat
+git clone --depth=1 https://github.com/openwrt/packages.git -b master watchcat
+cp -rf watchcat/utils/watchcat feeds/packages/utils/watchcat
+sudo rm -rf watchcat
+git clone https://github.com/gngpp/luci-app-watchcat-plus.git package/luci-app-watchcat-plus
