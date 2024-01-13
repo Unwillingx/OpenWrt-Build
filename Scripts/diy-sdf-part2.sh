@@ -11,6 +11,13 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 sudo rm -rf /feeds/luci/applications/luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
+# 添加luci-app-watchcat
+sudo rm -rf /feeds/luci/applications/luci-app-watchcat
+sudo mkdir watchcat
+sudo chmod -R 777 watchcat
+git clone --depth=1 https://github.com/openwrt/luci.git -b master watchcat
+cp -rf watchcat/applications/luci-app-watchcat package/luci-app-watchcat
+sudo rm -rf watchcat
 # 修改python
 sudo mkdir python
 sudo chmod -R 777 python
