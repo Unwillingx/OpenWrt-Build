@@ -19,4 +19,4 @@ sudo chmod -R 777 watchcat
 git clone --depth=1 https://github.com/openwrt/packages.git -b master watchcat
 cp -rf watchcat/utils/watchcat feeds/packages/utils/watchcat
 sudo rm -rf watchcat
-git clone https://github.com/gngpp/luci-app-watchcat-plus.git package/luci-app-watchcat-plus
+git clone --depth=1 https://github.com/gngpp/luci-app-watchcat-plus.git -b main package/luci-app-watchcat-plus
