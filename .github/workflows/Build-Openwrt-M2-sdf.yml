@@ -6,9 +6,9 @@ on:
 env:
   REPO_URL: https://github.com/sdf8057/ipq6000.git
   REPO_BRANCH: master
-  CONFIG_FILE: Configs/m2_sdf.config
+  CONFIG_FILE: Configs/m2_sdf2.config
   DIY_P1_SH: Scripts/diy-sdf-part1.sh
-  DIY_P2_SH: Scripts/diy-part2.sh
+  DIY_P2_SH: Scripts/diy-sdf-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   OPENWRT_RELEASE: true
@@ -55,7 +55,7 @@ jobs:
       id: clone
       run: |
         df -hT $GITHUB_WORKSPACE
-        git clone $REPO_URL -b $REPO_BRANCH workdir/openwrt
+        git clone --depth=1 $REPO_URL -b $REPO_BRANCH workdir/openwrt
         cd workdir/openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
