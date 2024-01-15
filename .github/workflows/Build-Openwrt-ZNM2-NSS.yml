@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/breeze303/ipq60xx-6.1.git
-  REPO_BRANCH: ipq60xx-devel_nss
+  REPO_URL: https://github.com/breeze303/ipq6000-6.1-nss.git
+  REPO_BRANCH: main
   CONFIG_FILE: Configs/m2_nss.config
   DIY_P1_SH: Scripts/diy-nss-part1.sh
   DIY_P2_SH: Scripts/diy-official-part2.sh
