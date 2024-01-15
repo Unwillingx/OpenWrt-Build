@@ -18,11 +18,3 @@ sudo chmod -R 777 watchcat
 git clone --depth=1 https://github.com/openwrt/luci.git -b master watchcat
 cp -rf watchcat/applications/luci-app-watchcat package/luci-app-watchcat
 sudo rm -rf watchcat
-# 修改python
-sudo mkdir python
-sudo chmod -R 777 python
-git clone https://github.com/openwrt/packages.git python && cd python && git checkout 246f361b06a9c99cd21c0bc06fa5141198916054
-cd ..
-sudo rm -rf feeds/packages/lang/python
-cp -rf python/lang/python feeds/packages/lang/python
-sudo rm -rf python
