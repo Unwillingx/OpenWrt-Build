@@ -9,10 +9,10 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
-sudo rm -rf /feeds/luci/applications/luci-app-openclash
+rm -rf /feeds/luci/applications/luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
 # 添加luci-app-watchcat
-sudo rm -rf /feeds/luci/applications/luci-app-watchcat
+rm -rf /feeds/luci/applications/luci-app-watchcat
 sudo mkdir watchcat
 sudo chmod -R 777 watchcat
 git clone --depth=1 https://github.com/openwrt/luci.git -b master watchcat
