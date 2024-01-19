@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/breeze303/ipq6000-6.1-nss.git
+  REPO_URL: https://github.com/Unwillingx/ipq60xx-wifi.git
   REPO_BRANCH: main
-  CONFIG_FILE: Configs/m2_ecm.config
+  CONFIG_FILE: Configs/m2_nss.config
   DIY_P1_SH: Scripts/diy-nss-part1.sh
   DIY_P2_SH: Scripts/diy-official-part2.sh
   UPLOAD_BIN_DIR: false
@@ -157,5 +157,4 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is Temporary Firmware for M2**
-          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/breeze303/ipq6000-6.1-nss)更新记录】
           ${{ env.VERSION_INFO }}
