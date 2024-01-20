@@ -20,9 +20,3 @@ cp -rf watchcat/utils/watchcat feeds/packages/utils/watchcat
 sudo rm -rf watchcat
 git clone --depth=1 https://github.com/gngpp/luci-app-watchcat-plus.git -b main package/luci-app-watchcat-plus
 # 更换python
-sudo rm -rf feeds/packages/lang/python
-sudo mkdir python
-sudo chmod -R 777 python
-git clone --depth=1 https://github.com/coolsnowwolf/packages.git -b openwrt-19.07 python
-cp -rf python/lang/python feeds/packages/lang/python
-sudo rm -rf python
