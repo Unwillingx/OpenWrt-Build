@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/Unwillingx/openwrt-gl-ax1800-lean.git
+  REPO_URL: https://github.com/Unwillingx/ZN-M2-WiFi.git
   REPO_BRANCH: master
   CONFIG_FILE: Configs/m2_ecm.config
   DIY_P1_SH: Scripts/diy-ecm-part1.sh
