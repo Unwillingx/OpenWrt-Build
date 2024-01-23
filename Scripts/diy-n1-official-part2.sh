@@ -10,7 +10,7 @@ git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package
 # 添加luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git -b master package/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git -b master package/luci-app-argon-config
-# 添加luci-theme-argon
+# 添加luci-app-amlogic
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git -b main package/luci-app-amlogic
 # 修改python
 sudo mkdir python
