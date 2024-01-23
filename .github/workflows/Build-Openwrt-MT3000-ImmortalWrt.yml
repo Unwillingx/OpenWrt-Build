@@ -1,4 +1,4 @@
-name: Build-Openwrt-MT3000d-ImmortalWrt
+name: Build-Openwrt-MT3000-ImmortalWrt
 
 on:
   workflow_dispatch:
