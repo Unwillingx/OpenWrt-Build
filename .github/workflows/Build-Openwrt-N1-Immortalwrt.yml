@@ -4,9 +4,10 @@ on:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
+  REPO_BRANCH: master
   CONFIG_FILE: Configs/n1_imm.config
-  DIY_P1_SH: Scripts/diy-imm-part1.sh
-  DIY_P2_SH: Scripts/diy-n1-imm.sh
+  DIY_P1_SH: Scripts/diy-n1-imm-part1.sh
+  DIY_P2_SH: Scripts/diy-n1-imm-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   UPLOAD_RELEASE: true
@@ -36,7 +37,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone --depth=1 $REPO_URL openwrt
+        git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         cd openwrt
         VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>date: %cd<br/>commit: %s<br/>commit hash: %H")
@@ -124,6 +125,6 @@ jobs:
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
           **This is Temporary Firmware for N1**
-          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt)更新记录】
+          当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt/tree/master)更新记录】
           ${{ env.VERSION_INFO }}
          
