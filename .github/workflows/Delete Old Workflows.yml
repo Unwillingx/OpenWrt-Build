@@ -14,11 +14,11 @@ jobs:
       uses: Mattraks/delete-workflow-runs@main
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        retain_days: 7
+        retain_days: 3
         keep_minimum_runs: 0
 
     - name: Delete Old Releases
-      uses: dev-drprasad/delete-older-releases@master
+      uses: dev-drprasad/delete-older-releases@v0.3.2
       with:
         keep_latest: 5
         delete_tags: true
