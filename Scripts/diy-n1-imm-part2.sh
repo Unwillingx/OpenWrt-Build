@@ -25,4 +25,4 @@ git clone https://github.com/immortalwrt/luci.git -b master docker && cd docker 
 cd ..
 sudo rm -rf feeds/luci/applications/luci-app-dockerman
 cp -rf docker/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
-sudo chmod -rf docker
+sudo rm -rf docker
