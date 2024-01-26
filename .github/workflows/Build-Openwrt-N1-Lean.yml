@@ -60,7 +60,7 @@ jobs:
         chmod +x $GITHUB_WORKSPACE/Scripts/preset-openclash.sh
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        $GITHUB_WORKSPACE/Scripts/preset-openclash.sh amd64
+        $GITHUB_WORKSPACE/Scripts/preset-openclash.sh
 
     - name: Download package
       id: package
