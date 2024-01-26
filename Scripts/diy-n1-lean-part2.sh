@@ -8,6 +8,8 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
+# 添加luci-app-amlogic
+git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git -b main package/luci-app-amlogic
 # 添加luci-app-alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist -b master package/alist
 # 添加luci-app-watchcat-plus
