@@ -12,6 +12,9 @@ git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package
 git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git -b main package/luci-app-amlogic
 # 添加luci-app-alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist -b master package/alist
+# 添加luci-theme-argone
+git clone --depth=1 https://github.com/kenzok78/luci-theme-argone.git -b main package/luci-theme-argone
+git clone --depth=1 https://github.com/kenzok78/luci-app-argone-config.git -b main package/luci-app-argone-config
 # 添加luci-app-watchcat-plus
 sudo rm -rf feeds/packages/utils/watchcat
 sudo mkdir watchcat
