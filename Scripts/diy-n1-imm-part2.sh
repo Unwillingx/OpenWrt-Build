@@ -13,8 +13,16 @@ git clone --depth=1 https://github.com/ophub/luci-app-amlogic.git -b main packag
 # 修改python
 sudo mkdir python
 sudo chmod -R 777 python
-git clone https://github.com/immortalwrt/packages.git python && cd python && git checkout c2904e115185493d3429e7e7c15e0752ce76a35f
+git clone https://github.com/immortalwrt/packages.git -b master python && cd python && git checkout c2904e115185493d3429e7e7c15e0752ce76a35f
 cd ..
 sudo rm -rf feeds/packages/lang/python
 cp -rf python/lang/python feeds/packages/lang/python
 sudo rm -rf python
+# 修改luci-app-dockerman
+sudo mkdir docker
+sudo chmod -R 777 docker
+git clone https://github.com/immortalwrt/luci.git -b master docker && cd python && git checkout b67d4f262c2802ce77c562434d363bc83e810d74
+cd ..
+sudo rm -rf feeds/luci/applications/luci-app-dockerman
+cp -rf docker/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
+sudo chmod -rf docker
