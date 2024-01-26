@@ -18,11 +18,4 @@ cd ..
 sudo rm -rf feeds/packages/lang/python
 cp -rf python/lang/python feeds/packages/lang/python
 sudo rm -rf python
-# 修改luci-app-dockerman
-sudo mkdir docker
-sudo chmod -R 777 docker
-git clone https://github.com/immortalwrt/luci.git -b master docker && cd docker && git checkout b67d4f262c2802ce77c562434d363bc83e810d74
-cd ..
-sudo rm -rf feeds/luci/applications/luci-app-dockerman
-cp -rf docker/applications/luci-app-dockerman feeds/luci/applications/luci-app-dockerman
-sudo rm -rf docker
+
