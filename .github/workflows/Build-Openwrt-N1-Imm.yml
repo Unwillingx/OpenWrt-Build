@@ -91,13 +91,23 @@ jobs:
 
     - name: Organize files
       id: organize
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: steps.compile.outputs.status == 'success'
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+        echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
-
+    
+    - name: Upload Rootfs To Release
+      if: steps.compile.outputs.status == 'success'
+      uses: ncipollo/release-action@v1
+      with:
+        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
+        allowUpdates: true
+        tag: ${{ env.FIRMWARE_TAG }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: ${{ env.FIRMWARE_PATH }}/*
+        body: |
+          **This is Temporary Firmware for Armvirt 64**
 
     - name: Package OpenWrt Firmware
       uses: unifreq/openwrt_packit@master
@@ -109,7 +119,7 @@ jobs:
         KERNEL_AUTO_LATEST: true
         DISTRIB_REVISION: R$(date +"%y.%m.%d") by Rancho
         
-    - name: Upload firmware directory
+    - name: Upload Firmware To Artifact
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_ARTIFACT == 'true'
       with:
@@ -118,7 +128,7 @@ jobs:
 
     - name: Upload Firmware To Release
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
-      uses: ncipollo/release-action@main
+      uses: ncipollo/release-action@v1
       with:
         name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
