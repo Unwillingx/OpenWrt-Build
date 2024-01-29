@@ -1,6 +1,6 @@
 #!/bin/bash
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.32.11/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.32.1/g' package/base-files/files/bin/config_generate
 # 启用Firewall4
 sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
 # 添加luci-app-mosdns
