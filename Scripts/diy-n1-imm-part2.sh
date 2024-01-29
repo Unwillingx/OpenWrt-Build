@@ -1,6 +1,8 @@
 #!/bin/bash
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.32.11/g' package/base-files/files/bin/config_generate
+# 启用Firewall4
+sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
 # 添加luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
