@@ -57,6 +57,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        rm -f target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
+        cp -f $GITHUB_WORKSPACE/Configs/mt7981b-cmcc-rax3000m-nand.dtso target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
 
     - name: Download package
       id: package
