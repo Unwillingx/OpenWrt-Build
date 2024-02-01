@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: master
-  CONFIG_FILE: Configs/rax_imm.config
+  CONFIG_FILE: Configs/rax_uboot.config
   DIY_P1_SH: Scripts/diy-rax3000m-imm-part1.sh
   DIY_P2_SH: Scripts/diy-rax3000m-imm-part2.sh
   UPLOAD_BIN_DIR: false
@@ -57,6 +57,8 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        rm -f target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
+        cp -f $GITHUB_WORKSPACE/Configs/mt7981b-cmcc-rax3000m-nand.dtso target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
 
     - name: Download package
       id: package
