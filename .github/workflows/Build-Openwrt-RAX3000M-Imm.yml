@@ -55,10 +55,10 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
+        chmod +x $GITHUB_WORKSPACE/Scripts/preset-openclash.sh
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        rm -f target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso
-        cp -f $GITHUB_WORKSPACE/Configs/mt7981b-cmcc-rax3000m-nand.dtso target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand.dtso && echo "Dts Replace Done!"
+        $GITHUB_WORKSPACE/Scripts/preset-openclash.sh
 
     - name: Download package
       id: package
