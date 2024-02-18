@@ -59,6 +59,8 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/Scripts/preset-openclash.sh
+        rm -f target/linux/qualcommax/patches-6.1/0154-arm64-dts-qcom-ipq6018-use-CPUFreq-NVMEM.patch
+        cp -f $GITHUB_WORKSPACE/Configs/0154-arm64-dts-qcom-ipq6018-use-CPUFreq-NVMEM.patch
 
     - name: Download package
       id: package
