@@ -2,7 +2,7 @@
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.32.1/g' package/base-files/files/bin/config_generate
 # 启用Firewall4
-sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
+# sed -i 's/+firewall/+uci-firewall/g' feeds/luci/applications/luci-app-firewall/Makefile
 # 添加luci-app-mosdns
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
