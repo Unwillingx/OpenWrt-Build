@@ -10,3 +10,5 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
+# 添加luci-app-ssrplus
+git clone --depth=1 https://github.com/fw876/helloworld.git -b master package/helloworld
