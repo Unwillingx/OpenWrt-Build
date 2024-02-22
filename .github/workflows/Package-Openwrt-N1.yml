@@ -1,11 +1,11 @@
-name: Package-Openwrt-N1-Imm
+name: Package-Openwrt-N1
 on:
   workflow_dispatch:
 
 env:
   OPENWRT_RELEASE: true
-  FIRMWARE_TAG: N1-Immortalwrt
-  OPENWRT_TAG: N1-Immortalwrt
+  FIRMWARE_TAG: N1
+  OPENWRT_TAG: N1
   TZ: Asia/Shanghai
 
 jobs:
