@@ -1,4 +1,4 @@
-name: Build-Openwrt-N1-Lean
+name: Build-Openwrt-N1
 on:
   workflow_dispatch:
 
@@ -11,7 +11,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_ARTIFACT: false
   UPLOAD_RELEASE: true
-  FIRMWARE_TAG: N1-Lean
+  FIRMWARE_TAG: N1
   TZ: Asia/Shanghai
   WHOAMI: Rancho
 
