@@ -17,6 +17,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist -b master package/al
 # 添加luci-theme-argone
 git clone --depth=1 https://github.com/kenzok78/luci-theme-argone.git -b main package/luci-theme-argone
 git clone --depth=1 https://github.com/kenzok78/luci-app-argone-config.git -b main package/luci-app-argone-config
+# 添加luci-app-ssr-plus
+git clone --depth=1 https://github.com/fw876/helloworld.git -b master package/helloworld
 # 添加luci-app-watchcat-plus
 sudo rm -rf feeds/packages/utils/watchcat
 sudo mkdir watchcat
