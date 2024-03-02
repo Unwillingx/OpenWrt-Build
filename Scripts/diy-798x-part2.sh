@@ -7,8 +7,9 @@ git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/l
 rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-# 添加luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
 # 添加luci-app-ssrplus
 git clone --depth=1 https://github.com/fw876/helloworld.git -b master package/helloworld
+# 添加luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
+cd package/luci-app-openclash && git checkout b1599d26778cb9b40f99093597a7d6ecba2e44e1
