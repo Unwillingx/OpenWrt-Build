@@ -7,7 +7,12 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth=1 https://github.com/vernesong/OpenClash.git -b master package/luci-app-openclash
+sudo mkdir clash
+sudo chmod -R 777 clash
+git clone --depth=50 https://github.com/vernesong/OpenClash.git -b master clash && cd clash && git checkout b1599d26778cb9b40f99093597a7d6ecba2e44e1
+cd ..
+cp -rf clash package/luci-app-openclash
+sudo rm -rf clash
 # 修改python
 sudo mkdir python
 sudo chmod -R 777 python
