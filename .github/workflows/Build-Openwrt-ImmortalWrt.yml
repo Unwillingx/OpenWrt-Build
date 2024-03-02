@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_URL: https://github.com/Unwillingx/immortalwrt
   REPO_BRANCH: master
   CONFIG_FILE: Configs/imm.config
   DIY_P1_SH: Scripts/diy-imm-part1.sh
