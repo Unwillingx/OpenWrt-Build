@@ -8,6 +8,7 @@ rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # 添加luci-app-ssrplus
+rm -rf feeds/luci/applications/luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld.git -b master package/helloworld
 # 添加luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
