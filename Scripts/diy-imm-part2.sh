@@ -17,14 +17,14 @@ sudo rm -rf feeds/packages/lang/python
 cp -rf python/lang/python feeds/packages/lang/python
 sudo rm -rf python
 # 更换dst
-# rm -f package/boot/uboot-envtools/files/mediatek_filogic
-# cp -f Configs/mediatek_filogic package/boot/uboot-envtools/files/mediatek_filogic
-# cp -f Configs/mt7981b-cmcc-rax3000m-nand-ubootmod.dts target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand-ubootmod.dts
-# rm -f target/linux/mediatek/filogic/base-files/etc/board.d/02_network
-# cp -f Configs/02_network target/linux/mediatek/filogic/base-files/etc/board.d/02_network
-# rm -f target/linux/mediatek/filogic/base-files/etc/hotplug.d/ieee80211/11_fix_wifi_mac
-# cp -f Configs/11_fix_wifi_mac target/linux/mediatek/filogic/base-files/etc/hotplug.d/ieee80211/11_fix_wifi_mac
-# rm -f target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
-# cp -f Configs/platform.sh target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
-# rm -f target/linux/mediatek/image/filogic.mk
-# cp -f Configs/filogic.mk target/linux/mediatek/image/filogic.mk
+rm -f package/boot/uboot-envtools/files/mediatek_filogic
+wget -cO package/boot/uboot-envtools/files/mediatek_filogic https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/mediatek_filogic
+wget -cO target/linux/mediatek/dts/mt7981b-cmcc-rax3000m-nand-ubootmod.dts https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/mt7981b-cmcc-rax3000m-nand-ubootmod.dts
+rm -f target/linux/mediatek/filogic/base-files/etc/board.d/02_network
+wget -cO target/linux/mediatek/filogic/base-files/etc/board.d/02_network https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/02_network
+rm -f target/linux/mediatek/filogic/base-files/etc/hotplug.d/ieee80211/11_fix_wifi_mac
+wget -cO target/linux/mediatek/filogic/base-files/etc/hotplug.d/ieee80211/11_fix_wifi_mac https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/11_fix_wifi_mac
+rm -f target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh
+wget -cO target/linux/mediatek/filogic/base-files/lib/upgrade/platform.sh https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/platform.sh
+rm -f target/linux/mediatek/image/filogic.mk
+wget -cO target/linux/mediatek/image/filogic.mk https://raw.githubusercontent.com/Unwillingx/OpenWrt-Build/main/Configs/filogic.mk
