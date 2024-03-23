@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/Unwillingx/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   CONFIG_FILE: Configs/imm_798x.config
   DIY_P1_SH: Scripts/diy-798x-part1.sh
