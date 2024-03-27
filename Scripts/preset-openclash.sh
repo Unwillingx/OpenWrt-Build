@@ -20,7 +20,7 @@ download_url=$(echo "$release_info" | grep -oP '"browser_download_url": "\K(.*?)
 # 下载文件
 if [ -n "$download_url" ]; then
     echo "Downloading latest release from: $download_url"
-    wget -qO- "$download_url" | tar xOvz > files/etc/openclash/core/clash_meta
+    wget -qO- "$download_url" | zcat xOvz > files/etc/openclash/core/clash_meta
     echo "Download complete."
 else
     echo "Failed to retrieve download URL for $file_name."
